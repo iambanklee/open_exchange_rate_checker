@@ -1,6 +1,6 @@
 # OpenExchangeRateChecker
 
-TODO: Write a gem description
+This is used to get exchange rates from [Open Exchange Rates](https://openexchangerates.org/)
 
 ## Installation
 
@@ -19,13 +19,10 @@ Or install it yourself as:
     $ gem install open_exchange_rate_checker
 
 ## Usage
+Example:
 
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it ( https://github.com/[my-github-username]/open_exchange_rate_checker/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+Get 2015-05-07 GBP rates (base rate: 'USD')
+```
+rate_checker = OpenExchangeRateChecker::RateChecker.new
+gbp_rate     = rate_checker.get_date_rate('2015-05-07', 'GBP')
+```
